@@ -1,13 +1,17 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    Button button;
+    CheckBox checkBox;
+    Line line;
+    Text text;
+    RadioButton radioButton;
 
     public static void main(String[] args) {
         launch(args);
@@ -17,11 +21,23 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Hello this is title of my window");
 
-        button = new Button();
-        button.setText("Click me!");
+        checkBox = new CheckBox();
+        checkBox.setText("Click me!");
 
-        StackPane layout = new StackPane();
-        layout.getChildren().add(button);
+        text = new Text();
+        text.setText("Hello world!");
+
+        radioButton = new RadioButton();
+        radioButton.setText("Click me!");
+
+        line = new Line();
+        line.setStartX(20);
+        line.setEndX(120);
+        line.setStartY(20);
+        line.setEndY(20);
+
+        VBox layout = new VBox(20);
+        layout.getChildren().addAll(checkBox, line, text, radioButton);
 
         Scene scene = new Scene(layout, 300, 250);
         primaryStage.setScene(scene);
