@@ -15,9 +15,11 @@ import java.util.List;
 
 public class GameBoard {
     Label header;
-    BorderPane layout;
     static Label turnOrder;
+    BorderPane layout;
     public Scene scene;
+    HBox boardWithControls;
+    VBox gameBoard;
     public static MoveSelector redMoveSelector;
     public static MoveSelector blueMoveSelector;
     public List<List<Tile>> tileGrid;
@@ -33,11 +35,11 @@ public class GameBoard {
         redMoveSelector = new MoveSelector("Red");
         blueMoveSelector = new MoveSelector("Blue");
 
-        HBox boardWithControls = new HBox(redMoveSelector.segment, drawBlankBoard(), blueMoveSelector.segment);
+        boardWithControls = new HBox(redMoveSelector.segment, drawBlankBoard(), blueMoveSelector.segment);
         boardWithControls.setAlignment(Pos.TOP_CENTER);
         boardWithControls.setSpacing(30);
 
-        VBox gameBoard = new VBox(header, boardWithControls, turnOrder);
+        gameBoard = new VBox(header, boardWithControls, turnOrder);
         gameBoard.setAlignment(Pos.BASELINE_CENTER);
         gameBoard.setSpacing(20);
 

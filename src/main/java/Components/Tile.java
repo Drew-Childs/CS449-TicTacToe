@@ -39,6 +39,4 @@ public class Tile {
             GameBoard.setTurnText(GameModeSelector.gameMode.currentTurn.playerOneTurn);
         }
     }
-    // TODO: Code cleanup
-
 }

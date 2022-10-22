@@ -15,6 +15,8 @@ public class Settings {
     public static GameModeSelector gameSelector;
     public static SizeSelector sizeSelector;
     public Button confirm;
+    HBox controls;
+    VBox segment;
     BorderPane layout;
     public Scene scene;
 
@@ -27,11 +29,11 @@ public class Settings {
 
         layout = new BorderPane();
 
-        HBox controls = new HBox(gameSelector.segment, sizeSelector.segment);
+        controls = new HBox(gameSelector.segment, sizeSelector.segment);
         controls.setAlignment(Pos.TOP_CENTER);
         controls.setSpacing(50);
 
-        VBox segment = new VBox(welcomeText, controls, confirm);
+        segment = new VBox(welcomeText, controls, confirm);
         segment.setAlignment(Pos.BASELINE_CENTER);
         segment.setSpacing(30);
 
