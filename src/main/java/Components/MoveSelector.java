@@ -2,16 +2,15 @@ package Components;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.VBox;
 
-import javax.swing.*;
-
 public class MoveSelector implements EventHandler<ActionEvent> {
     RadioButton sButton;
     RadioButton oButton;
-    public VBox selection;
+    public VBox segment;
     public Boolean sSelected;
     Label playerText;
 
@@ -26,7 +25,8 @@ public class MoveSelector implements EventHandler<ActionEvent> {
         sSelected = true;
         sButton.setSelected(sSelected);
 
-        selection = new VBox(playerText, sButton, oButton);
+        segment = new VBox(playerText, sButton, oButton);
+        segment.setAlignment(Pos.TOP_LEFT);
     }
 
     @Override

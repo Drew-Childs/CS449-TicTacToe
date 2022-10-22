@@ -1,6 +1,6 @@
 package Components;
 
-import javafx.application.Application;
+import GameLogic.GameMode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.RadioButton;
@@ -9,26 +9,26 @@ import javafx.scene.layout.VBox;
 public class GameModeSelector implements EventHandler<ActionEvent> {
     RadioButton simpleGame;
     RadioButton standardGame;
-    public VBox selection;
-    public Boolean simpleGameMode;
+    public VBox segment;
+    public static GameMode gameMode;
 
     public GameModeSelector() {
+        gameMode = new GameMode();
         simpleGame = new RadioButton("Simple Game");
         standardGame = new RadioButton("Standard Game");
 
         simpleGame.setOnAction(this);
         standardGame.setOnAction(this);
 
-        simpleGameMode = true;
-        simpleGame.setSelected(simpleGameMode);
+        simpleGame.setSelected(gameMode.simpleGameMode);
 
-        selection = new VBox(simpleGame, standardGame);
+        segment = new VBox(simpleGame, standardGame);
     }
 
     @Override
     public void handle(ActionEvent event) {
-        simpleGameMode = !simpleGameMode;
-        simpleGame.setSelected(simpleGameMode);
-        standardGame.setSelected(!simpleGameMode);
+        gameMode.simpleGameMode = !gameMode.simpleGameMode;
+        simpleGame.setSelected(gameMode.simpleGameMode);
+        standardGame.setSelected(!gameMode.simpleGameMode);
     }
 }
