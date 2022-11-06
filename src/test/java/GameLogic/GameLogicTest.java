@@ -35,7 +35,7 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testIsGameOver_simpleGame_oneStrikeThrough() {
+    public void testSimpleGame_oneStrikeThrough() {
         // given
         GameLogic.simpleGameMode = true;
         GameLogic.scoredSOS.put("000102", true);
@@ -49,7 +49,7 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testIsGameOver_simpleGame_emptyBoard() {
+    public void testSimpleGame_emptyBoard() {
         // given
         GameLogic.simpleGameMode = true;
 
@@ -61,7 +61,7 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testIsGameOver_simpleGame_fullBoard() {
+    public void testSimpleGame_fullBoard() {
         // given
         GameLogic.simpleGameMode = true;
 
@@ -84,7 +84,7 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testIsGameOver_standardGame_emptyBoard() {
+    public void testStandardGame_emptyBoard() {
         // given
         GameLogic.simpleGameMode = false;
 
@@ -96,7 +96,7 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testCheckStandardGame_equalStrikeThrough() {
+    public void testStandardGame_equalStrikeThrough() {
         // given
         GameLogic.simpleGameMode = false;
 
@@ -122,7 +122,7 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testCheckStandardGame_playerOneWin() {
+    public void testStandardGame_playerOneWin() {
         // given
         GameLogic.simpleGameMode = false;
 
@@ -147,7 +147,7 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testCheckStandardGame_playerTwoWin() {
+    public void testStandardGame_playerTwoWin() {
         // given
         GameLogic.simpleGameMode = false;
 
