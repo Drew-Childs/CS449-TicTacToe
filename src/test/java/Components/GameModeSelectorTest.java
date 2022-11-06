@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GameLogicSelectorTest {
+public class GameModeSelectorTest {
     JFXPanel panel = new JFXPanel();
 
     @Test
