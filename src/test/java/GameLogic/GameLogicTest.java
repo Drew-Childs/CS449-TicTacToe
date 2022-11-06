@@ -1,18 +1,13 @@
 package GameLogic;
 
-import SOS.Components.SizeSelector;
 import SOS.GameLogic.GameLogic;
 import SOS.Scenes.GameBoard;
 import SOS.Scenes.Settings;
-import javafx.scene.control.ChoiceBox;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import javafx.embed.swing.JFXPanel;
 
-import java.util.Set;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
 
 public class GameLogicTest {
     JFXPanel panel = new JFXPanel();
