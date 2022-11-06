@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class GameLogic {
     public static Boolean simpleGameMode;
-    static Map<String, Boolean> scoredSOS;
+    public static Map<String, Boolean> scoredSOS;
 
     public static Boolean playerOneTurn;
     public static Boolean playerOneWin;

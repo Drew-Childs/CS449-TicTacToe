@@ -97,4 +97,108 @@ public class TileTest {
         // then
         assertEquals(tile.value.getText(), "O");
     }
+
+    @Test
+    public void testHorizontalLineVisible_playerOneTurn() {
+        // given
+        GameModeSelector.gameLogic.playerOneTurn = true;
+
+        // when
+        tile.horizontalLineVisible();
+
+        // then
+        assertEquals(3, tile.horizontalLine.getStrokeWidth());
+        assertEquals(Color.RED, tile.horizontalLine.getStroke());
+    }
+
+    @Test
+    public void testHorizontalLineVisible_playerTwoTurn() {
+        // given
+        GameModeSelector.gameLogic.playerOneTurn = false;
+
+        // when
+        tile.horizontalLineVisible();
+
+        // then
+        assertEquals(3, tile.horizontalLine.getStrokeWidth());
+        assertEquals(Color.BLUE, tile.horizontalLine.getStroke());
+    }
+
+    @Test
+    public void testVerticalLineVisible_playerOneturn() {
+        // given
+        GameModeSelector.gameLogic.playerOneTurn = true;
+
+        // when
+        tile.verticalLineVisible();
+
+        // then
+        assertEquals(3, tile.verticalLine.getStrokeWidth());
+        assertEquals(Color.RED, tile.verticalLine.getStroke());
+    }
+
+    @Test
+    public void testVerticalLineVisible_playerTwoTurn() {
+        // given
+        GameModeSelector.gameLogic.playerOneTurn = false;
+
+        // when
+        tile.verticalLineVisible();
+
+        // then
+        assertEquals(3, tile.verticalLine.getStrokeWidth());
+        assertEquals(Color.BLUE, tile.verticalLine.getStroke());
+    }
+
+    @Test
+    public void testDiagonalLineOneVisible_playerOneTurn() {
+        // given
+        GameModeSelector.gameLogic.playerOneTurn = true;
+
+        // when
+        tile.diagonalLineOneVisible();
+
+        // then
+        assertEquals(3, tile.diagonalLineOne.getStrokeWidth());
+        assertEquals(Color.RED, tile.diagonalLineOne.getStroke());
+    }
+
+    @Test
+    public void testDiagonalLineOneVisible_playerTwoTurn() {
+        // given
+        GameModeSelector.gameLogic.playerOneTurn = false;
+
+        // when
+        tile.diagonalLineOneVisible();
+
+        // then
+        assertEquals(3, tile.diagonalLineOne.getStrokeWidth());
+        assertEquals(Color.BLUE, tile.diagonalLineOne.getStroke());
+    }
+
+    @Test
+    public void testDiagonalLineTwoVisible_playerOneTurn() {
+        // given
+        GameModeSelector.gameLogic.playerOneTurn = true;
+
+        // when
+        tile.diagonalLineTwoVisible();
+
+        // then
+        assertEquals(3, tile.diagonalLineTwo.getStrokeWidth());
+        assertEquals(Color.RED, tile.diagonalLineTwo.getStroke());
+    }
+
+    @Test
+    public void testDiagonalLineTwoVisible_playerTwoTurn() {
+        // given
+        GameModeSelector.gameLogic.playerOneTurn = false;
+
+        // when
+        tile.diagonalLineTwoVisible();
+
+        // then
+        assertEquals(3, tile.diagonalLineTwo.getStrokeWidth());
+        assertEquals(Color.BLUE, tile.diagonalLineTwo.getStroke());
+    }
 }

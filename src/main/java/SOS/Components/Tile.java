@@ -11,10 +11,10 @@ public class Tile {
     public Rectangle box;
     public StackPane segment;
     public Label value;
-    Line horizontalLine;
-    Line verticalLine;
-    Line diagonalLineOne;
-    Line diagonalLineTwo;
+    public Line horizontalLine;
+    public Line verticalLine;
+    public Line diagonalLineOne;
+    public Line diagonalLineTwo;
 
     public Tile() {
         box = new Rectangle(50, 50, null);
