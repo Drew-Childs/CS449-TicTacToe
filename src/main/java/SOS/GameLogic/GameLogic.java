@@ -23,7 +23,6 @@ public class GameLogic {
         draw = false;
     }
 
-    // TODO: implement grade move logic
     public Boolean isGameOver() {
         if (simpleGameMode) {
             return checkSimpleGame();
@@ -33,7 +32,6 @@ public class GameLogic {
         }
     }
 
-    // TODO: implement simple game logic
     private Boolean checkSimpleGame() {
         searchBoard();
 
@@ -49,7 +47,6 @@ public class GameLogic {
         return false;
     }
 
-    // TODO: implement standard game logic
     private Boolean checkStandardGame() {
         searchBoard();
 
@@ -78,7 +75,6 @@ public class GameLogic {
         return false;
     }
 
-    // TODO: implement line drawing logic
     private void searchBoard() {
         for (Integer x = 0; x < Settings.sizeSelector.selector.getValue(); x++) {
             for (Integer y = 0; y < Settings.sizeSelector.selector.getValue(); y++) {
@@ -139,8 +135,6 @@ public class GameLogic {
                     }
                     catch (Exception e) {}
                 }
-
-                System.out.println("beans");
             }
         }
     }

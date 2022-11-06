@@ -28,7 +28,6 @@ public class GameBoard {
     BorderPane layout;
     public Scene scene;
 
-    // TODO: add new game button (this will allow you to return to the settings selection screen) (will need to reset data structures)
     public GameBoard() {
         layout = new BorderPane();
         header = new Label("Welcome to the game board!");
