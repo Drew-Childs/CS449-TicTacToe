@@ -1,5 +1,6 @@
 package Components;
 
+import SOS.Components.SizeSelector;
 import org.junit.jupiter.api.Test;
 import javafx.embed.swing.JFXPanel;
 

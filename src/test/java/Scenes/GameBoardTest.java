@@ -1,8 +1,10 @@
 package Scenes;
 
-import Components.GameModeSelector;
-import Components.SizeSelector;
-import GameLogic.GameMode;
+import SOS.Components.GameModeSelector;
+import SOS.Components.SizeSelector;
+import SOS.GameLogic.GameLogic;
+import SOS.Scenes.GameBoard;
+import SOS.Scenes.Settings;
 import javafx.geometry.Pos;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +18,7 @@ public class GameBoardTest {
     @BeforeEach
     void setup() {
         Settings.sizeSelector = new SizeSelector();
-        GameModeSelector.gameMode = new GameMode();
+        GameModeSelector.gameLogic = new GameLogic();
     }
 
     @Test

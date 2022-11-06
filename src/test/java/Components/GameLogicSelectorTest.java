@@ -1,14 +1,14 @@
 package Components;
 
 
-import GameLogic.GameMode;
+import SOS.Components.GameModeSelector;
 import javafx.embed.swing.JFXPanel;
 import javafx.event.ActionEvent;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GameModeSelectorTest {
+public class GameLogicSelectorTest {
     JFXPanel panel = new JFXPanel();
 
     @Test
@@ -17,7 +17,7 @@ public class GameModeSelectorTest {
         GameModeSelector gameModeSelector = new GameModeSelector();
 
         // then
-        assertEquals(GameModeSelector.gameMode.simpleGameMode, true);
+        assertEquals(GameModeSelector.gameLogic.simpleGameMode, true);
         assertEquals(gameModeSelector.simpleGame.isSelected(), true);
         assertEquals(gameModeSelector.simpleGame.getText(), "Simple Game");
         assertEquals(gameModeSelector.standardGame.getText(), "Standard Game");
@@ -32,7 +32,7 @@ public class GameModeSelectorTest {
         gameModeSelector.handle(new ActionEvent());
 
         // then
-        assertEquals(GameModeSelector.gameMode.simpleGameMode, false);
+        assertEquals(GameModeSelector.gameLogic.simpleGameMode, false);
         assertEquals(gameModeSelector.simpleGame.isSelected(), false);
         assertEquals(gameModeSelector.standardGame.isSelected(), true);
     }

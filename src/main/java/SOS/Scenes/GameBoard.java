@@ -1,10 +1,12 @@
-package Scenes;
+package SOS.Scenes;
 
-import Components.GameModeSelector;
-import Components.MoveSelector;
-import Components.Tile;
+import SOS.Components.GameModeSelector;
+import SOS.Components.MoveSelector;
+import SOS.Components.Tile;
+import SOS.Main;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -14,23 +16,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameBoard {
-    Label header;
-    static Label turnOrder;
-    BorderPane layout;
-    public Scene scene;
-    HBox boardWithControls;
-    VBox gameBoard;
+    final int boardSize = Settings.sizeSelector.selector.getValue();
+    public static List<List<Tile>> tileGrid;
+    public Label header;
+    public static Label turnOrder;
     public static MoveSelector redMoveSelector;
     public static MoveSelector blueMoveSelector;
-    public List<List<Tile>> tileGrid;
-    final int boardSize = Settings.sizeSelector.selector.getValue();
+    Button newGame;
+    public HBox boardWithControls;
+    public VBox gameBoard;
+    BorderPane layout;
+    public Scene scene;
 
+    // TODO: add new game button (this will allow you to return to the settings selection screen) (will need to reset data structures)
     public GameBoard() {
         layout = new BorderPane();
         header = new Label("Welcome to the game board!");
 
         turnOrder = new Label();
-        setTurnText(GameModeSelector.gameMode.currentTurn.playerOneTurn);
+        setTurnText(GameModeSelector.gameLogic.playerOneTurn);
 
         redMoveSelector = new MoveSelector("Red");
         blueMoveSelector = new MoveSelector("Blue");
@@ -39,7 +43,12 @@ public class GameBoard {
         boardWithControls.setAlignment(Pos.TOP_CENTER);
         boardWithControls.setSpacing(30);
 
-        gameBoard = new VBox(header, boardWithControls, turnOrder);
+        newGame = new Button("New Game");
+        newGame.setOnAction(e -> {
+            Main.primaryStage.setScene(new Settings().scene);
+        });
+
+        gameBoard = new VBox(header, boardWithControls, turnOrder, newGame);
         gameBoard.setAlignment(Pos.BASELINE_CENTER);
         gameBoard.setSpacing(20);
 

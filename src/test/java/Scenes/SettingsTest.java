@@ -1,5 +1,6 @@
 package Scenes;
 
+import SOS.Scenes.Settings;
 import javafx.geometry.Pos;
 import org.junit.jupiter.api.Test;
 import javafx.embed.swing.JFXPanel;

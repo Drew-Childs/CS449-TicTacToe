@@ -1,4 +1,4 @@
-package Components;
+package SOS.Components;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,11 +8,11 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.layout.VBox;
 
 public class MoveSelector implements EventHandler<ActionEvent> {
-    RadioButton sButton;
-    RadioButton oButton;
+    public RadioButton sButton;
+    public RadioButton oButton;
     public VBox segment;
     public Boolean sSelected;
-    Label playerText;
+    public Label playerText;
 
     public MoveSelector(String player) {
         playerText = new Label(player + " Player:");

@@ -1,11 +1,11 @@
-import Scenes.GameBoard;
-import Scenes.Settings;
+package SOS;
+
+import SOS.Scenes.Settings;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    Settings settings;
-    GameBoard gameBoard;
+    public static Stage primaryStage;
 
     public static void main(String[] args) {
         launch(args);
@@ -13,14 +13,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        Main.primaryStage = primaryStage;
         primaryStage.setTitle("SOS");
 
-        settings = new Settings();
-
-        settings.confirm.setOnAction(e -> {
-            gameBoard = new GameBoard();
-            primaryStage.setScene(gameBoard.scene);
-        });
+        Settings settings = new Settings();
 
         primaryStage.setScene(settings.scene);
         primaryStage.show();

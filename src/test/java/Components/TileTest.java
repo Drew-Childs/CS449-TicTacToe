@@ -1,8 +1,12 @@
 package Components;
 
-import GameLogic.GameMode;
-import Scenes.GameBoard;
-import Scenes.Settings;
+import SOS.Components.GameModeSelector;
+import SOS.Components.MoveSelector;
+import SOS.Components.SizeSelector;
+import SOS.Components.Tile;
+import SOS.GameLogic.GameLogic;
+import SOS.Scenes.GameBoard;
+import SOS.Scenes.Settings;
 import javafx.event.ActionEvent;
 import javafx.scene.paint.Color;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +23,7 @@ public class TileTest {
     void setup() {
         tile = new Tile();
         Settings.sizeSelector = new SizeSelector();
-        GameModeSelector.gameMode = new GameMode();
+        GameModeSelector.gameLogic = new GameLogic();
         GameBoard gameBoard = new GameBoard();
         GameBoard.redMoveSelector = new MoveSelector("Red");
         GameBoard.blueMoveSelector = new MoveSelector("Blue");
@@ -72,7 +76,7 @@ public class TileTest {
     @Test
     public void testPlaceMove_PlayerTwoSSelected() {
         // given
-        GameModeSelector.gameMode.currentTurn.switchTurn();
+        GameModeSelector.gameLogic.switchTurn();
 
         // when
         tile.placeMove();
@@ -84,7 +88,7 @@ public class TileTest {
     @Test
     public void testPlaceMove_PlayerTwoOSelected() {
         // given
-        GameModeSelector.gameMode.currentTurn.switchTurn();
+        GameModeSelector.gameLogic.switchTurn();
         GameBoard.blueMoveSelector.handle(new ActionEvent());
 
         // when

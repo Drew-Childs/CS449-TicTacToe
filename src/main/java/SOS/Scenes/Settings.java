@@ -1,7 +1,7 @@
-package Scenes;
+package SOS.Scenes;
 
-import Components.GameModeSelector;
-import Components.SizeSelector;
+import SOS.Components.GameModeSelector;
+import SOS.Components.SizeSelector;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,14 +9,15 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import SOS.Main;
 
 public class Settings {
-    Label welcomeText;
+    public Label welcomeText;
     public static GameModeSelector gameSelector;
     public static SizeSelector sizeSelector;
     public Button confirm;
-    HBox controls;
-    VBox segment;
+    public HBox controls;
+    public VBox segment;
     BorderPane layout;
     public Scene scene;
 
@@ -24,6 +25,10 @@ public class Settings {
         welcomeText = new Label("Welcome to SOS!");
 
         confirm = new Button("Confirm");
+        confirm.setOnAction(e -> {
+            Main.primaryStage.setScene(new GameBoard().scene);
+        });
+
         gameSelector = new GameModeSelector();
         sizeSelector = new SizeSelector();
 

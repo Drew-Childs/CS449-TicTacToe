@@ -1,5 +1,6 @@
 package Components;
 
+import SOS.Components.MoveSelector;
 import javafx.event.ActionEvent;
 import org.junit.jupiter.api.Test;
 import javafx.embed.swing.JFXPanel;

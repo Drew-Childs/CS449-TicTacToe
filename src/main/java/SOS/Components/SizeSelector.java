@@ -1,4 +1,4 @@
-package Components;
+package SOS.Components;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;
