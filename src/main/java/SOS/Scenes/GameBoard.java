@@ -32,9 +32,6 @@ public class GameBoard {
         layout = new BorderPane();
         header = new Label("Welcome to the game board!");
 
-        turnOrder = new Label();
-        setTurnText(GameModeSelector.gameLogic.playerOneTurn);
-
         redMoveSelector = new MoveSelector("Red");
         blueMoveSelector = new MoveSelector("Blue");
 
@@ -46,6 +43,9 @@ public class GameBoard {
         newGame.setOnAction(e -> {
             Main.primaryStage.setScene(new Settings().scene);
         });
+
+        turnOrder = new Label();
+        setTurnText(GameModeSelector.gameLogic.playerOneTurn);
 
         gameBoard = new VBox(header, boardWithControls, turnOrder, newGame);
         gameBoard.setAlignment(Pos.BASELINE_CENTER);
@@ -80,9 +80,17 @@ public class GameBoard {
     public static void setTurnText(Boolean playerOneTurn) {
         if (playerOneTurn) {
             turnOrder.setText("Red's Turn!");
+
+            if (redMoveSelector.computerSelected) {
+                redMoveSelector.computerLogic.computeMove();
+            }
         }
         else {
             turnOrder.setText("Blue's Turn!");
+
+            if (blueMoveSelector.computerSelected) {
+                blueMoveSelector.computerLogic.computeMove();
+            }
         }
     }
 }

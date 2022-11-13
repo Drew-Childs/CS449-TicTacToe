@@ -1,5 +1,6 @@
 package SOS.Components;
 
+import SOS.GameLogic.ComputerPlayer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -13,9 +14,10 @@ public class MoveSelector implements EventHandler<ActionEvent> {
     public RadioButton human;
     public RadioButton computer;
     public VBox segment;
-    public Boolean sSelected;
-    public Boolean humanSelected;
     public Label playerText;
+    public Boolean sSelected;
+    public Boolean computerSelected;
+    public ComputerPlayer computerLogic;
 
     public MoveSelector(String player) {
         playerText = new Label(player + " Player:");
@@ -24,15 +26,17 @@ public class MoveSelector implements EventHandler<ActionEvent> {
         sButton = new RadioButton("S");
         oButton = new RadioButton("O");
 
+        computerLogic = new ComputerPlayer();
+
         human.setOnAction(this);
         computer.setOnAction(this);
         oButton.setOnAction(this);
         sButton.setOnAction(this);
 
         sSelected = true;
-        humanSelected = true;
+        computerSelected = false;
         sButton.setSelected(sSelected);
-        human.setSelected(humanSelected);
+        human.setSelected(!computerSelected);
 
         VBox so = new VBox(sButton, oButton);
         so.setAlignment(Pos.BASELINE_CENTER);
@@ -44,17 +48,19 @@ public class MoveSelector implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         if (event.getTarget() == computer) {
-            humanSelected = false;
-            human.setSelected(humanSelected);
-            computer.setSelected(!humanSelected);
+            computerSelected = true;
+            human.setSelected(!computerSelected);
+            computer.setSelected(computerSelected);
 
             oButton.setSelected(false);
             sButton.setSelected(false);
+
+            computerLogic.computeMove();
         }
         else if (event.getTarget() == human) {
-            humanSelected = true;
-            human.setSelected(humanSelected);
-            computer.setSelected(!humanSelected);
+            computerSelected = false;
+            human.setSelected(!computerSelected);
+            computer.setSelected(computerSelected);
 
             sButton.setSelected(sSelected);
             oButton.setSelected(!sSelected);
