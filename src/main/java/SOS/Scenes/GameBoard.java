@@ -53,7 +53,7 @@ public class GameBoard {
 
         layout.setCenter(gameBoard);
 
-        scene = new Scene(layout, 600, 500);
+        scene = new Scene(layout, 700, 600);
     }
 
     VBox drawBlankBoard() {
