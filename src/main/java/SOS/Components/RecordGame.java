@@ -54,11 +54,5 @@ public class RecordGame {
         catch (IOException e) {
             System.out.println("Unable to write to file...");
         }
-
-
-
-        // check whole game board
-        // see what move has been placed that hasn't been recorded
-        // when move is found, record it to text file and recorded games array
     }
 }
