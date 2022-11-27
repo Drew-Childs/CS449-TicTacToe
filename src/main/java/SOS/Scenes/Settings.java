@@ -2,9 +2,11 @@ package SOS.Scenes;
 
 import SOS.Components.GameModeSelector;
 import SOS.Components.SizeSelector;
+import SOS.Components.RecordGame;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -15,8 +17,9 @@ public class Settings {
     public Label welcomeText;
     public static GameModeSelector gameSelector;
     public static SizeSelector sizeSelector;
+    public static RecordGame recordGame;
     public Button confirm;
-    public HBox controls;
+    public VBox controls;
     public VBox segment;
     BorderPane layout;
     public Scene scene;
@@ -33,10 +36,16 @@ public class Settings {
         sizeSelector = new SizeSelector();
 
         layout = new BorderPane();
+        recordGame = new RecordGame();
 
-        controls = new HBox(gameSelector.segment, sizeSelector.segment);
-        controls.setAlignment(Pos.TOP_CENTER);
-        controls.setSpacing(50);
+        HBox sizeAndMode = new HBox(gameSelector.segment, sizeSelector.segment);
+        sizeAndMode.setAlignment(Pos.TOP_CENTER);
+        sizeAndMode.setSpacing(50);
+
+        RecordGame recordGame = new RecordGame();
+
+        controls = new VBox(sizeAndMode, recordGame.segment);
+        controls.setSpacing(20);
 
         segment = new VBox(welcomeText, controls, confirm);
         segment.setAlignment(Pos.BASELINE_CENTER);

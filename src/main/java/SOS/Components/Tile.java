@@ -1,6 +1,7 @@
 package SOS.Components;
 
 import SOS.Scenes.GameBoard;
+import SOS.Scenes.Settings;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -72,6 +73,10 @@ public class Tile {
 
             GameModeSelector.gameLogic.switchTurn();
             GameBoard.setTurnText(GameModeSelector.gameLogic.playerOneTurn);
+
+            if (Settings.recordGame.checkBox.isSelected()) {
+                RecordGame.recordMove();
+            }
         }
     }
 
