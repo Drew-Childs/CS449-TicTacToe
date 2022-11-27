@@ -68,6 +68,10 @@ public class Tile {
                 GameOver gameOver = new GameOver();
                 gameOver.display(message);
 
+                if (Settings.recordGame.checkBox.isSelected()) {
+                    RecordGame.recordMove();
+                }
+
                 return;
             }
 
