@@ -20,8 +20,8 @@ public class SettingsTest {
         assertEquals(settings.welcomeText.getText(), "Welcome to SOS!");
         assertEquals(settings.confirm.getText(), "Confirm");
 
-        assertEquals(settings.controls.getAlignment(), Pos.TOP_CENTER);
-        assertEquals(settings.controls.getSpacing(), 50);
+        assertEquals(settings.controls.getAlignment(), Pos.TOP_LEFT);
+        assertEquals(settings.controls.getSpacing(), 20);
 
         assertEquals(settings.segment.getAlignment(), Pos.BASELINE_CENTER);
         assertEquals(settings.segment.getSpacing(), 30);
